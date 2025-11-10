@@ -1,0 +1,41 @@
+# Airflow Variables Configuration
+# airflow variables import variables.yaml
+
+# ETL Configuration
+etl_batch_size: 1000
+etl_max_retries: 3
+etl_timeout_minutes: 60
+
+# Data Quality Thresholds
+data_quality_null_threshold: 0.05
+data_quality_duplicate_threshold: 0.01
+
+# Email Notifications
+email_on_failure: true
+email_on_retry: false
+alert_emails:
+  - "admin@example.com"
+  - "team@example.com"
+
+# File Paths
+data_raw_path: "/home/user/test-repo/data/raw"
+data_processed_path: "/home/user/test-repo/data/processed"
+data_output_path: "/home/user/test-repo/data/output"
+
+# API Configuration
+api_rate_limit: 100
+api_retry_attempts: 3
+api_timeout_seconds: 30
+
+# Database Configuration
+db_connection_pool_size: 5
+db_query_timeout: 300
+
+# Monitoring
+monitoring_enabled: true
+metrics_port: 9090
+
+# Feature Flags
+enable_data_validation: true
+enable_notifications: true
+enable_archiving: true

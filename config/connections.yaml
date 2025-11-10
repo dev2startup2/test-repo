@@ -1,0 +1,74 @@
+# Airflow Connections Configuration
+# Bu fayldan connection'larni import qilish mumkin
+# airflow connections import connections.yaml
+
+# PostgreSQL Connections
+postgres_source:
+  conn_type: postgres
+  host: localhost
+  schema: source_db
+  login: source_user
+  password: source_password
+  port: 5432
+  extra:
+    connect_timeout: 10
+
+postgres_warehouse:
+  conn_type: postgres
+  host: localhost
+  schema: warehouse_db
+  login: warehouse_user
+  password: warehouse_password
+  port: 5432
+  extra:
+    connect_timeout: 10
+
+# MySQL Connection
+mysql_source:
+  conn_type: mysql
+  host: localhost
+  schema: mysql_db
+  login: mysql_user
+  password: mysql_password
+  port: 3306
+
+# MongoDB Connection
+mongodb_source:
+  conn_type: mongo
+  host: localhost
+  port: 27017
+  extra:
+    authSource: admin
+    authMechanism: SCRAM-SHA-1
+
+# HTTP/API Connections
+api_rest:
+  conn_type: http
+  host: https://api.example.com
+  extra:
+    timeout: 30
+    headers:
+      Authorization: Bearer your_api_key
+
+# AWS S3 Connection
+aws_s3:
+  conn_type: aws
+  extra:
+    aws_access_key_id: your_access_key
+    aws_secret_access_key: your_secret_key
+    region_name: us-east-1
+
+# Google Cloud Connection
+google_cloud:
+  conn_type: google_cloud_platform
+  extra:
+    keyfile_path: /path/to/service-account-key.json
+    project_id: your-project-id
+
+# Redis Connection
+redis_default:
+  conn_type: redis
+  host: localhost
+  port: 6379
+  extra:
+    db: 0
